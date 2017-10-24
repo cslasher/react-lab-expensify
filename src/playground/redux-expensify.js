@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 import uuid from 'uuid';
 
-//Function needs:
+// Function needs:
 const addExpense = (
   { description = '', notes = '', amount = 0, createdAt = 0 } = {}
 ) => ({
@@ -120,9 +120,8 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
     .sort((a, b) => {
       if (sortBy === 'date') {
         return a.createdAt < b.createdAt ? 1 : -1;
-      } else {
-        return a.amount < b.amount ? 1 : -1;
       }
+      return a.amount < b.amount ? 1 : -1;
     });
 };
 
