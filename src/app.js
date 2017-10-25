@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import 'normalize.css/normalize.css';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
@@ -15,13 +16,6 @@ import getVisibleExpenses from './selectors/expenses';
 import './styles/styles.scss';
 
 const store = configureStore();
-let count = 0;
-store.subscribe(() => {
-  const state = store.getState();
-  const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-  count += 1;
-  console.log(`Store change ${count}: ${JSON.stringify(visibleExpenses)}`);
-});
 
 const itemOne = store.dispatch(
   addExpense({ description: 'Water bill', amount: 1000, createdAt: 101 })
@@ -32,6 +26,15 @@ store.dispatch(
 store.dispatch(editExpense(itemOne.expense.id, { amount: 200 }));
 
 store.dispatch(setTextFilter('water'));
-const state = store.getState();
 
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+const jsx = (
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+);
+
+setTimeout(() => {
+  store.dispatch(setTextFilter('bill'));
+}, 3000);
+
+ReactDOM.render(jsx, document.getElementById('app'));

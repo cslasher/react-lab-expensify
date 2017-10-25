@@ -34,7 +34,7 @@
     ],
     "react/jsx-filename-extension": "off",
     "react/prop-types": [
-      "error",
+      "off",
       {
         "ignore": ["match"]
       }

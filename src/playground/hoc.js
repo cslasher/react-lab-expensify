@@ -38,6 +38,6 @@ const AuthInfo = requireAuthentication(Info);
 // );
 
 ReactDOM.render(
-  <AuthInfo isAuthenticated={true} info="There are the details" />,
+  <AuthInfo isAuthenticated info="There are the details" />,
   document.getElementById('app')
 );
