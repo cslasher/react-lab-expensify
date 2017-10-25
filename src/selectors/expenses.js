@@ -1,5 +1,5 @@
 export default (expenses, { text, sortBy, startDate, endDate }) => {
-  expenses
+  return expenses
     .filter(expense => {
       const startDateMatch =
         typeof startDate !== 'number' || expense.createdAt >= startDate;

@@ -3,16 +3,24 @@ import ReactDOM from 'react-dom';
 import 'normalize.css/normalize.css';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { addExpense, editExpense } from './actions/expenses';
-import { setTextFilter } from './actions/filters';
+import { addExpense, editExpense, removeExpense } from './actions/expenses';
+import {
+  setTextFilter,
+  sortByAmount,
+  sortByDate,
+  setStartDate,
+  setEndDate
+} from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import './styles/styles.scss';
 
 const store = configureStore();
+let count = 0;
 store.subscribe(() => {
   const state = store.getState();
   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-  console.log(visibleExpenses);
+  count += 1;
+  console.log(`Store change ${count}: ${JSON.stringify(visibleExpenses)}`);
 });
 
 const itemOne = store.dispatch(
@@ -24,5 +32,6 @@ store.dispatch(
 store.dispatch(editExpense(itemOne.expense.id, { amount: 200 }));
 
 store.dispatch(setTextFilter('water'));
+const state = store.getState();
 
 ReactDOM.render(<AppRouter />, document.getElementById('app'));

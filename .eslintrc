@@ -17,7 +17,7 @@
     "comma-dangle": ["error", "never"],
     "function-paren-newline": "off",
     "no-unused-vars": [
-      "error",
+      "warn",
       {
         "vars": "local",
         "args": "none"
