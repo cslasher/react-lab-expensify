@@ -17,24 +17,21 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-const itemOne = store.dispatch(
+store.dispatch(
   addExpense({ description: 'Water bill', amount: 1000, createdAt: 101 })
 );
 store.dispatch(
-  addExpense({ description: 'Gas bill', amount: 1000, createdAt: 111 })
+  addExpense({ description: 'Gas bill', amount: 500, createdAt: 511 })
 );
-store.dispatch(editExpense(itemOne.expense.id, { amount: 200 }));
-
-store.dispatch(setTextFilter('water'));
+store.dispatch(
+  addExpense({ description: 'Rent', amount: 10000, createdAt: 403 })
+);
+// store.dispatch(editExpense(itemOne.expense.id, { amount: 200 }));
 
 const jsx = (
   <Provider store={store}>
     <AppRouter />
   </Provider>
 );
-
-setTimeout(() => {
-  store.dispatch(setTextFilter('bill'));
-}, 3000);
 
 ReactDOM.render(jsx, document.getElementById('app'));
