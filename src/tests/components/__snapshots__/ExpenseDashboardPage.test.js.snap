@@ -3,6 +3,6 @@
 exports[`should render ExpenseDashboardPage correctly 1`] = `
 <div>
   <Connect(ExpenseListFilters) />
-  <ExpenseForm />
+  <Connect(ExpenseList) />
 </div>
 `;

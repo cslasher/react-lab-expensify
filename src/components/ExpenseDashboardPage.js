@@ -1,5 +1,5 @@
 import React from 'react';
-import ExpenseList from './ExpenseForm';
+import ExpenseList from './ExpenseList';
 import ExpenseListFilters from './ExpenseListFilters';
 
 const ExpenseDashboardPage = () => (
