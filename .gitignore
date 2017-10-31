@@ -8,8 +8,8 @@ yarn-error.log*
 # Webpack bundles
 public/bundle.js
 public/bundle.js.map
-public/style.css
-public/style.css.map
+public/styles.css
+public/styles.css.map
 
 # Runtime data
 pids
