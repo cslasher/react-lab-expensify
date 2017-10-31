@@ -5,6 +5,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Webpack bundles
+public/bundle.js
+public/bundle.js.map
+public/style.css
+public/style.css.map
+
 # Runtime data
 pids
 *.pid
