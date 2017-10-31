@@ -6,10 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Webpack bundles
-public/bundle.js
-public/bundle.js.map
-public/styles.css
-public/styles.css.map
+public/dist/
 
 # Runtime data
 pids
