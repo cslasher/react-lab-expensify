@@ -4,12 +4,12 @@ exports[`should render summary with plural expenses correctly 1`] = `
 <div>
   <p>
     Viewing 
-    3
+    12
      
     expenses
-     totalling
      
-    $1,070.00
+    totalling 
+    $32.00
   </p>
 </div>
 `;
@@ -21,9 +21,9 @@ exports[`should render summary with single expense correctly 1`] = `
     1
      
     expense
-     totalling
      
-    $1,020.00
+    totalling 
+    $3.20
   </p>
 </div>
 `;
