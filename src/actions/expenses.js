@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import database from '../firebase/firebase';
 
 export const addExpense = expense => ({
@@ -41,6 +40,17 @@ export const startAddExpense = (expenseData = {}) => {
             ...expense
           })
         );
+      });
+  };
+};
+
+export const startEditExpense = (id, updates) => {
+  return dispatch => {
+    return database
+      .ref(`expenses/${id}`)
+      .update(updates)
+      .then(() => {
+        dispatch(editExpense(id, updates));
       });
   };
 };
