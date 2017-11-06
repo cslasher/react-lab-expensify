@@ -15,9 +15,11 @@
     "modules": true
   },
   "rules": {
+    "arrow-body-style": ["error", "as-needed"],
     "arrow-parens": ["error", "as-needed"],
     "comma-dangle": ["error", "never"],
     "function-paren-newline": "off",
+    "no-confusing-arrow": "off",
     "no-unused-vars": [
       "warn",
       {

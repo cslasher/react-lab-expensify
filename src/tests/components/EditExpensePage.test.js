@@ -32,11 +32,11 @@ test('should handle startEditExpense', () => {
     expenses[2].id,
     expenses[1]
   );
-  expect(history.push).toHaveBeenLastCalledWith('/');
+  expect(history.push).toHaveBeenLastCalledWith('/dashboard');
 });
 
 test('should handle startRemoveExpense', () => {
   wrapper.find('button').simulate('click');
   expect(startRemoveExpense).toHaveBeenLastCalledWith(expenses[2].id);
-  expect(history.push).toHaveBeenLastCalledWith('/');
+  expect(history.push).toHaveBeenLastCalledWith('/dashboard');
 });
