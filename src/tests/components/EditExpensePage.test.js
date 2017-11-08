@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { EditExpensePage } from '../../components/EditExpensePage';
+import RemoveExpenseModal from '../../components/RemoveExpenseModal';
 import expenses from '../fixures/expenses';
 
 let startEditExpense;
@@ -37,6 +38,5 @@ test('should handle startEditExpense', () => {
 
 test('should handle startRemoveExpense', () => {
   wrapper.find('button').simulate('click');
-  expect(startRemoveExpense).toHaveBeenLastCalledWith(expenses[2].id);
-  expect(history.push).toHaveBeenLastCalledWith('/dashboard');
+  expect(wrapper.find(RemoveExpenseModal).prop('modalIsOpen')).toBeTruthy();
 });
