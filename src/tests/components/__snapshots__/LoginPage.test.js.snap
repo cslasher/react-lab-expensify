@@ -15,12 +15,20 @@ exports[`should render Login Page correctly 1`] = `
     <p>
       Get your expenses under control!
     </p>
-    <button
-      className="button"
-      onClick={[Function]}
-    >
-      Login with Google
-    </button>
+    <div>
+      <button
+        className="button button--login"
+        onClick={[Function]}
+      >
+        Login with Google
+      </button>
+      <button
+        className="button button--login"
+        onClick={[Function]}
+      >
+        Login with Github
+      </button>
+    </div>
   </div>
 </div>
 `;
