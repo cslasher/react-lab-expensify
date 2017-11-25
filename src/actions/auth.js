@@ -19,9 +19,14 @@ export const startGoogleLogin = () => {
           const pendingCred = error.credential;
           return firebase
             .auth()
-            .signInWithRedirect(githubAuthProvider)
-            .then(result => {
-              return result.user;
+            .fetchProvidersForEmail(error.email)
+            .then(providers => {
+              return firebase
+                .auth()
+                .signInWithRedirect(providers[0])
+                .then(result => {
+                  return result.user;
+                });
             })
             .then(user => {
               return user.linkWithCredential(pendingCred);
@@ -39,18 +44,14 @@ export const startGithubLogin = () => {
       .signInWithPopup(githubAuthProvider)
       .catch(error => {
         if (error.code === 'auth/account-exists-with-different-credential') {
-          const existingEmail = error.email;
           const pendingCred = error.credential;
           return firebase
             .auth()
             .fetchProvidersForEmail(error.email)
             .then(providers => {
-              googleAuthProvider.setCustomParameters({
-                login_hint: existingEmail
-              });
               return firebase
                 .auth()
-                .signInWithRedirect(googleAuthProvider)
+                .signInWithRedirect(providers[0])
                 .then(result => {
                   return result.user;
                 });
