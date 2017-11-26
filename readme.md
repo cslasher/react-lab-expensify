@@ -87,11 +87,16 @@ yarn start
 
 ## Authors
 
-* **Edwin Liu** - with features modified from Andrew Mead's
+* **Edwin Liu** - Made from Andrew Mead's
   [The Complete React Web Developer Course (with Redux)](https://www.udemy.com/react-2nd-edition/learn/v4/overview)
-  Expensify App.
+  Expensify App with features added.
 
 ## License
 
 This project is licensed under the MIT License - see the
 [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgement
+
+Original app from Andrew Mead's
+[The Complete React Web Developer Course (with Redux)](https://www.udemy.com/react-2nd-edition/learn/v4/overview)
